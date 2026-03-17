@@ -4,3 +4,159 @@
   font-style: normal;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Russo One', sans-serif;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+
+.image-container {
+width: 40%;
+position: relative;
+}
+
+.image-container::after {
+    content: "THE ODIN PROJECT";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 40px;
+    font-family: 'Russo One', sans-serif;
+    padding: 10px 90px;
+}
+
+.red-mont {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.description {
+max-width: 500px;    
+font-size: 16px;
+line-height: 1.5;
+}
+
+.form-content {
+width: 60%;
+background-color: #f9fafb;
+box-shadow: -5px 0 10px rgba(0, 0, 0, 0.05);
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 20px;
+padding: 40px;
+}
+
+h2 {
+display: flex;
+justify-content:flex-start;
+font-size: 250%;
+color: rgb(155, 74, 74);
+
+}
+
+.form {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 25px;
+max-width: 500px;
+}
+
+.inputs {
+display: flex;
+flex-direction: column;
+font-size: 12px;
+font-weight: bold;
+}
+
+input {
+padding: 8px;
+border: 3px solid rgb(92, 41, 41);
+border-radius: 4px;
+margin-top: 5px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f50f0f;
+    box-shadow: 0 0 2px #f50f0f;
+}
+
+input:invalid {
+  border: 1px solid rgb(192, 76, 22);
+}
+
+label {
+
+}
+
+button {
+grid-column: span 2;
+padding: 12px 20px;
+background-color: #c72e2e;
+color: white;
+border: none;
+border-radius: 8px;
+font-weight: bold;
+cursor: pointer;
+
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background-color: #790000;
+  box-shadow: 0px 8px 15px rgba(231, 22, 22, 0.3);
+  transform: translateY(-2px);
+}
+
+footer {
+  margin-top: 10px;
+}
+
+@media (max-width: 799px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-content {
+        width: 100%;
+    }
+
+    .red-mont {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        grid-column: span 1;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1300px) {
+    .image-container {
+        width: 50%;
+    }
+
+    .form-content {
+        width: 50%;
+    }
+}
